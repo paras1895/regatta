@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+  --gold: #eab308;
+}
+
+.about-section {
+  font-family: var(--font-body);
+  animation: waterFlow 18s ease infinite;
+}
+
+@keyframes waterFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.about-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  line-height: 1.1;
+  color: #111827;
+}
+
+.edition-block {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--gold);
+}
+
+.pulse-dot {
+  position: absolute;
+  left: -7px;
+  top: 10px;
+  width: 14px;
+  height: 14px;
+  background-color: var(--gold);
+  border-radius: 50%;
+  animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.theme-text {
+  font-family: var(--font-heading);
+  color: var(--gold);
+  font-size: 1.2rem;
+  margin-top: 0.25rem;
+}
+
+.about-intro {
+  font-size: 1.125rem;
+  max-width: 36rem;
+  color: #374151;
+}
+
+.about-prose {
+  line-height: 1.8;
+  color: #374151;
+}
+
+.about-prose p {
+  margin-bottom: 1.5rem;
+}
+
+.about-prose p:first-child::first-letter {
+  float: left;
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-right: 0.5rem;
+  color: var(--gold);
+}
