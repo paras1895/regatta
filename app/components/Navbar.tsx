@@ -90,14 +90,13 @@ export default function Navbar() {
           {sections.map((sec) => (
             <button
               key={sec.id}
-              onClick={() => scrollTo(sec.id)}
-              className="text-left text-gray-700 dark:text-gray-300 text-lg font-medium"
+              onClick={() => handleNavClick(sec)}
+              className="cursor-pointer text-main transition-colors hover-underline"
             >
               {sec.label}
             </button>
           ))}
 
-          {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
             className="mt-2 w-fit px-4 py-2 rounded"
