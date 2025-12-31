@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { useTheme } from "./ThemeProvider";
 import {
   MoonIcon,
@@ -10,42 +11,27 @@ import {
 } from "@heroicons/react/24/outline";
 
 const sections = [
-  { id: "events", label: "Events" },
-  { id: "team", label: "Team" },
-  { id: "sponsors", label: "Sponsors" },
-  { id: "gallery", label: "Gallery" },
+  { id: "events", label: "Events", type: "scroll" },
+  { id: "team", label: "Team", type: "scroll" },
+  { id: "sponsors", label: "Sponsors", type: "scroll" },
+  { id: "gallery", label: "Gallery", type: "route", href: "/gallery" },
 ];
 
 export default function Navbar() {
+  const router = useRouter();
   const { theme, toggleTheme } = useTheme();
 
-  const [dark, setDark] = useState(false);
+  const [dark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [active, setActive] = useState("");
 
-  useEffect(() => {
-    const handleScroll = () => {
-      let current = "";
+  const handleNavClick = (sec: any) => {
+    if (sec.type === "route" && sec.href) {
+      router.push(sec.href);
+      setMenuOpen(false);
+      return;
+    }
 
-      sections.forEach((sec) => {
-        const elem = document.getElementById(sec.id);
-        if (!elem) return;
-
-        const rect = elem.getBoundingClientRect();
-        if (rect.top <= 120 && rect.bottom >= 120) {
-          current = sec.id;
-        }
-      });
-
-      setActive(current);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollTo = (id: string) => {
-    const elem = document.getElementById(id);
+    const elem = document.getElementById(sec.id);
     if (elem) {
       const offset = elem.offsetTop - 70;
       window.scrollTo({ top: offset, behavior: "smooth" });
@@ -69,7 +55,11 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-8 font-medium">
           {sections.map((sec) => (
-            <button key={sec.id} onClick={() => scrollTo(sec.id)} className="cursor-pointer text-main transition-colors hover-underline">
+            <button
+              key={sec.id}
+              onClick={() => handleNavClick(sec)}
+              className="cursor-pointer text-main transition-colors hover-underline"
+            >
               {sec.label}
             </button>
           ))}
@@ -83,7 +73,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -96,7 +85,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Slide-out Menu */}
       {menuOpen && (
         <div className="md:hidden bg-white dark:bg-black border-t dark:border-gray-800 px-6 py-4 flex flex-col gap-4">
           {sections.map((sec) => (

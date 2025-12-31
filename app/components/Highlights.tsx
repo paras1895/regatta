@@ -20,17 +20,6 @@ const Highlights: React.FC = () => (
             A quick look into 97th edition of regatta.
           </p>
         </div>
-        {/* <div className="bg-white rounded p-4 shadow-sm flex">
-          <div>
-            <h4 className="font-medium">Past Editions Gallery</h4>
-            <p className="text-sm text-gray-600">
-              Browse photos and results from previous years.
-            </p>
-          </div>
-          <div>
-            <button>click</button>
-          </div>
-        </div> */}
       </div>
     </div>
   </Section>

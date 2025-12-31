@@ -9,7 +9,6 @@ const About: React.FC = () => {
       className="about-section py-24 px-6 md:px-16 overflow-hidden bg-main text-main"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
-        {/* Left column */}
         <div className="space-y-8">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
@@ -62,22 +61,22 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="about-prose space-y-6 text-main"
+          className="about-prose space-y-6"
         >
-          <p>
+          <p className="text-muted">
             Recognized in the Limca Book of Records as India&apos;s Oldest College
             Festival, the Regatta attracts over 12,000 spectators annually. Each
             edition builds upon the legacy of those before it, carrying forward
             nearly a century of tradition.
           </p>
 
-          <p>
+          <p className="text-muted">
             From the elegance of Kayak Ballet and the precision of Shell Games to
             the artistic Punt Formations and thrilling Tele-matches, the event is
             a seamless blend of athleticism and artistry.
           </p>
 
-          <p>
+          <p className="text-muted">
             The iconic Mashaal Dance remains the soul of the Regatta—a luminous
             spectacle where flaming torches glide across the water, symbolizing
             unity, resilience, and the unbroken flow of tradition.
