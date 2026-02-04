@@ -45,7 +45,7 @@ const Events: React.FC = () => {
   return (
     <section
       id="events"
-      className="bg-[#f8f7f4] py-16 md:py-24 px-5 sm:px-6 md:px-16 lg:px-24 border-t border-stone-200"
+      className="bg-base-200 py-16 md:py-24 px-5 sm:px-6 md:px-16 lg:px-24"
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 md:mb-20 gap-8">
@@ -57,8 +57,8 @@ const Events: React.FC = () => {
               viewport={{ once: true }}
               className="flex items-center gap-3 mb-4"
             >
-              <span className="w-10 h-[1px] bg-stone-800" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-stone-500">
+              <span className="w-10 h-[1px] bg-stone-500" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-stone-400">
                 Our Events
               </span>
             </motion.div>
@@ -68,10 +68,10 @@ const Events: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              className="font-serif text-4xl sm:text-5xl md:text-7xl text-stone-900"
+              className="font-serif text-4xl sm:text-5xl md:text-7xl text-base-content/90"
             >
               Signature <br />
-              <span className="italic text-stone-400">Performances</span>
+              <span className="italic text-base-content">Performances</span>
             </motion.h2>
           </div>
 
@@ -93,22 +93,22 @@ const Events: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: index * 0.08 }}
               viewport={{ once: true }}
-              className="group border-b border-stone-200 py-10 md:py-14 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center transition-colors duration-500 hover:bg-stone-50/60"
+              className="group py-10 md:py-14 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center transition-colors duration-500"
             >
               <div className="hidden lg:block lg:col-span-1">
-                <span className="font-serif text-2xl italic text-stone-300 group-hover:text-stone-800 transition-colors">
+                <span className="font-serif text-2xl italic text-base-content">
                   {event.id}
                 </span>
               </div>
 
               <div className="lg:col-span-5 text-center lg:text-left space-y-4 px-2">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-stone-400">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-base-content">
                   {event.category}
                 </span>
-                <h3 className="font-space text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 uppercase group-hover:translate-x-2 transition-transform duration-500">
+                <h3 className="font-space text-3xl sm:text-4xl md:text-5xl font-bold text-base-content uppercase group-hover:translate-x-2 transition-transform duration-500">
                   {event.title}
                 </h3>
-                <p className="text-stone-600 max-w-md mx-auto lg:mx-0 leading-relaxed font-light">
+                <p className="bg-base-200 max-w-md mx-auto lg:mx-0 leading-relaxed font-light">
                   {event.desc}
                 </p>
               </div>

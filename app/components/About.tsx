@@ -8,7 +8,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative py-24 px-6 md:px-16 lg:px-24 bg-[#f8f7f4] overflow-hidden"
+      className="relative py-24 px-6 md:px-16 lg:px-24 bg-base-200 overflow-hidden"
     >
       <div className="absolute right-0 top-20 opacity-[0.03] select-none pointer-events-none hidden lg:block">
         <h2 className="text-[15rem] font-serif leading-none italic uppercase">
@@ -26,16 +26,16 @@ const About: React.FC = () => {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h2 className="font-serif text-5xl md:text-7xl text-stone-900 italic leading-tight">
+              <h2 className="font-serif text-5xl md:text-7xl text-base-content italic leading-tight">
                 What is <br /> Regatta?
               </h2>
 
-              <div className="p-8 border-l border-stone-200 bg-stone-100/50 relative overflow-hidden group">
+              <div className="p-8 border-1 border-base-content bg-base-200/50 relative overflow-hidden group">
                 <div className="relative z-10">
-                  <div className="text-sm tracking-widest uppercase text-stone-400 font-bold mb-2">
-                    Heritage
+                  <div className="text-sm tracking-widest uppercase text-base-content font-bold mb-2">
+                    This Year
                   </div>
-                  <div className="text-4xl font-serif text-stone-900 mb-1">
+                  <div className="text-4xl font-serif text-base-content mb-1">
                     98<sup>th</sup> Edition
                   </div>
                   <div className="text-stone-500 italic font-serif text-lg">
@@ -54,7 +54,7 @@ const About: React.FC = () => {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <p className="text-xl md:text-2xl text-stone-800 font-light leading-relaxed">
+              <p className="text-xl md:text-2xl text-base-content font-light leading-relaxed">
                 COEP Technological University, Asia&apos;s third-oldest academic
                 institution, proudly hosts the{" "}
                 <span className="font-bold border-b border-stone-800">
@@ -63,21 +63,21 @@ const About: React.FC = () => {
                 —India&apos;s longest-running college festival.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-y border-stone-200">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-y border-stone-500">
                 <div className="space-y-2">
-                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-stone-600">
+                  <h4 className="text-[10px] font-bold uppercase tracking-widest bg-base-200">
                     Record
                   </h4>
-                  <p className="text-sm text-stone-700 leading-snug">
+                  <p className="text-sm text-base-content leading-snug">
                     Recognized in the Limca Book of Records as India&apos;s
                     Oldest College Festival.
                   </p>
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-[10px] font-bold uppercase tracking-widest text-stone-600">
+                  <h4 className="text-[10px] font-bold uppercase tracking-widest bg-base-200">
                     Attendance
                   </h4>
-                  <p className="text-sm text-stone-700 leading-snug">
+                  <p className="text-sm text-base-content leading-snug">
                     Attracting over 12,000 spectators annually to the banks of
                     the Mula River.
                   </p>
@@ -97,9 +97,9 @@ const About: React.FC = () => {
                   </p>
                 </div>
 
-                <p className="text-lg">
+                <p className="text-lg text-base-content">
                   As the Regatta enters its 98th edition,{" "}
-                  <strong className="font-bold text-stone-900 italic font-serif underline decoration-stone-300 underline-offset-4">
+                  <strong className="font-bold bg-base-200 italic font-serif underline decoration-stone-300 underline-offset-4">
                     Legacy in Motion
                   </strong>{" "}
                   reflects a journey where history propels movement, and every

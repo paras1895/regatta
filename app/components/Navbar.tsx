@@ -4,8 +4,12 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeSwitcher from "./ThemeSwitcher";
+import { useTheme } from "../context/ThemeContext";
 
 const Navbar: React.FC = () => {
+  const { theme } = useTheme();
+
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -29,6 +33,7 @@ const Navbar: React.FC = () => {
     { name: "About", href: "/#about" },
     { name: "Events", href: "/#events" },
     { name: "Gallery", href: "/gallery" },
+    { name: "Team", href: "/#team" },
     { name: "Sponsors", href: "/#sponsors" },
   ];
 
@@ -37,13 +42,19 @@ const Navbar: React.FC = () => {
       <nav
         className={`fixed top-0 left-0 w-full z-150 transition-all duration-500 ${
           scrolled
-            ? "bg-white/80 backdrop-blur-md py-4 shadow-sm"
+            ? "bg-base-100/80 backdrop-blur-md py-4 shadow-sm"
             : "bg-transparent py-8"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           <Link href="/" className="relative z-110">
-            <Image src={"/logo.png"} width={100} height={100} alt="logo" />
+            <Image
+              src={theme === "dark" ? "/logo-white.png" : "/logo-black.png"}
+              width={100}
+              height={100}
+              alt="logo"
+              priority
+            />
           </Link>
 
           <div className="hidden md:flex items-center gap-10">
@@ -51,12 +62,13 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="nav-link text-[10px] font-bold uppercase text-stone-600 hover:text-stone-900 transition-colors relative group"
+                className="nav-link text-[10px] font-bold uppercase text-base-content hover: transition-colors relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-stone-900 transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] text-base-content transition-all group-hover:w-full" />
               </Link>
             ))}
+            <ThemeSwitcher />
           </div>
 
           <button
@@ -66,15 +78,15 @@ const Navbar: React.FC = () => {
           >
             <motion.span
               animate={isOpen ? { rotate: 45, y: 7.5 } : { rotate: 0, y: 0 }}
-              className="w-6 h-[1.5px] bg-stone-900 block"
+              className="w-6 h-[1.5px] bg-base-content block"
             />
             <motion.span
               animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="w-6 h-[1.5px] bg-stone-900 block"
+              className="w-6 h-[1.5px] bg-base-content block"
             />
             <motion.span
               animate={isOpen ? { rotate: -45, y: -7.5 } : { rotate: 0, y: 0 }}
-              className="w-6 h-[1.5px] bg-stone-900 block"
+              className="w-6 h-[1.5px] bg-base-content block"
             />
           </button>
         </div>
@@ -86,7 +98,7 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-[#f8f7f4] z-[105] flex flex-col items-center justify-center"
+            className="fixed inset-0 bg-base-200 z-[105] flex flex-col items-center justify-center"
             style={{ height: "100dvh" }}
           >
             <div className="flex flex-col items-center gap-10">
@@ -100,12 +112,13 @@ const Navbar: React.FC = () => {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="font-serif text-5xl italic text-stone-900 hover:text-stone-400 transition-colors"
+                    className="font-serif text-5xl italic text-base-content"
                   >
                     {link.name}
                   </Link>
                 </motion.div>
               ))}
+              <ThemeSwitcher />
             </div>
 
             <div className="absolute bottom-12 flex flex-col items-center gap-4">

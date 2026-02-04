@@ -112,13 +112,13 @@ const SPONSOR_GROUPS: SponsorGroup[] = [
 
 const Sponsors: React.FC = () => {
   return (
-    <section id="sponsors" className="py-24 font-['Public_Sans'] bg-[#f8f7f4]">
+    <section id="sponsors" className="py-24 font-['Public_Sans'] bg-base-200">
       <div className="max-w-7xl mx-auto px-6">
         <header className="mb-20 text-center space-y-4">
-          <p className="text-[10px] font-black uppercase tracking-[0.5em] text-stone-400">
+          <p className="text-[10px] font-black uppercase tracking-[0.5em] text-stone-500">
             Collaborators & Support
           </p>
-          <h2 className="font-serif text-5xl md:text-6xl text-stone-900 leading-none">
+          <h2 className="font-serif text-5xl md:text-6xl text-base-content leading-none">
             97th Regatta Sponsors
           </h2>
           <div className="w-32 h-[2px] bg-stone-800 mx-auto"></div>
@@ -136,7 +136,7 @@ const Sponsors: React.FC = () => {
                     <div key={subIndex} className="flex flex-col items-center">
                       <div className="flex items-center gap-6 mb-10 w-full">
                         <div className="h-[1px] flex-grow bg-stone-600"></div>
-                        <h3 className="text-[15px] font-bold uppercase tracking-[0.3em] text-stone-500 whitespace-nowrap">
+                        <h3 className="text-[15px] font-bold uppercase tracking-[0.3em] text-base-content whitespace-nowrap">
                           {subGroup.title}
                         </h3>
                         <div className="h-[1px] flex-grow bg-stone-600"></div>
@@ -166,7 +166,7 @@ const Sponsors: React.FC = () => {
               <div key={index} className="flex flex-col items-center">
                 <div className="flex items-center justify-center gap-6 mb-10 w-full max-w-4xl">
                   <div className="h-[1px] flex-grow bg-stone-600"></div>
-                  <h3 className="text-[15px] font-bold uppercase tracking-[0.3em] text-stone-500 whitespace-nowrap">
+                  <h3 className="text-[15px] font-bold uppercase tracking-[0.3em] text-base-content whitespace-nowrap">
                     {group.title}
                   </h3>
                   <div className="h-[1px] flex-grow bg-stone-600"></div>

@@ -25,8 +25,8 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full bg-[#f8f7f4] flex items-center justify-center overflow-hidden pt-[15vh] md:pt-0">
-      <div className="hidden xl:flex absolute left-0 top-0 h-full w-20 border-r border-stone-200 flex-col items-center justify-between py-12 z-20 bg-[#f8f7f4]">
+    <section className="relative min-h-screen w-full bg-base-200 flex items-center justify-center overflow-hidden pt-[15vh] md:pt-0">
+      <div className="hidden xl:flex absolute left-0 top-0 h-full w-20 border-r border-stone-200 flex-col items-center justify-between py-12 z-20 bg-base-100">
         <span className="font-bold text-[10px] tracking-[0.5em] -rotate-90 text-stone-400 uppercase">
           COEP Tech University
         </span>
@@ -45,8 +45,8 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.15, duration: 0.8 }}
               className="flex items-center justify-center lg:justify-start gap-4 mb-6"
             >
-              <span className="h-[1px] w-10 bg-stone-800" />
-              <p className="text-[9px] font-bold uppercase tracking-[0.45em] text-stone-500 md:text-[11px]">
+              <span className="h-[1px] w-10 bg-stone-500" />
+              <p className="text-[9px] font-bold uppercase tracking-[0.45em] text-base-content md:text-[11px]">
                 98th Regatta Edition
               </p>
               <span className="h-[1px] w-10 bg-stone-800 md:hidden" />
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="font-space text-[20vw] sm:text-6xl md:text-7xl lg:text-[9vw] font-bold text-stone-900 leading-[0.9] mb-8"
+              className="font-space text-[20vw] sm:text-6xl md:text-7xl lg:text-[9vw] font-bold text-base-content leading-[0.9] mb-8"
             >
               LEGACY <br />
               <span className="font-serif italic font-light text-stone-400 inline-block">
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, duration: 0.8 }}
-              className="text-stone-600 text-sm max-w-xl mx-auto lg:mx-0 font-light leading-relaxed md:text-lg"
+              className="bg-base-200 text-sm max-w-xl mx-auto lg:mx-0 font-light leading-relaxed md:text-lg"
             >
               Where tradition flows forward. India's oldest college festival
               showcasing the spirit of generations on the Mula River.
@@ -77,27 +77,8 @@ const Hero: React.FC = () => {
 
           <div className="lg:col-span-5 relative flex justify-center">
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="absolute -top-16 -left-16 w-44 h-44 hidden md:block"
-            >
-              <svg viewBox="0 0 100 100" className="fill-stone-900">
-                <path
-                  id="circlePath"
-                  d="M50,50 m-35,0 a35,35 0 1,1 70,0 a35,35 0 1,1 -70,0"
-                  fill="none"
-                />
-                <text className="text-[5.5px] uppercase font-bold tracking-[0.22em]">
-                  <textPath href="#circlePath">
-                    Mashaal • Punt • Kayak • Telematches • Shell •
-                  </textPath>
-                </text>
-              </svg>
-            </motion.div>
-
-            <motion.div
               style={{ y: y1 }}
-              className="relative w-full max-w-md aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl bg-stone-200"
+              className="relative w-full max-w-md aspect-4/5 overflow-hidden rounded-3xl shadow-2xl bg-stone-200"
             >
               <AnimatePresence mode="wait">
                 <motion.img

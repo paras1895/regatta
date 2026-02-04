@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LenisWrapper from "@/components/LenisWrapper";
-import { ThemeProvider } from "./components/ThemeProvider";
+import { ThemeProvider } from "./context/ThemeContext";
 
 export const metadata: Metadata = {
   title: "98th Regatta",
