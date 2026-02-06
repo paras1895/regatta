@@ -224,10 +224,10 @@ const teamData = [
       },
       {
         id: "23",
-        name: "Nidhi Gohel",
+        name: "Kartik Khandait",
         image: "team/s2.jpg",
-        email: "nidhidg23.mfg@coeptech.ac.in",
-        instagram: "https://instagram.com/nidhhi.04",
+        email: "kartikworkspace1@gmail.com",
+        instagram: "",
       },
     ],
   },
