@@ -191,6 +191,29 @@ const Sponsors: React.FC = () => {
           })}
         </div>
       </div>
+      <div className="mt-28 pt-16 border-t border-stone-300 text-center">
+        <p className="text-md font-bold uppercase tracking-[0.45em] text-stone-500 mb-4">
+          Media & Collaborations
+        </p>
+
+        <p className="text-lg text-base-content mx-auto leading-relaxed mb-4">
+          For more glimpses, media shots, and collaboration opportunities
+          related to Regatta, please contact
+        </p>
+
+        <div className="inline-flex flex-col items-center gap-1 border border-base-content/20 px-6 py-4 rounded-xl bg-base-100 shadow-sm">
+          <span className="font-semibold text-base-content">
+            Yuvraj Fulsoundar
+          </span>
+
+          <a
+            href="tel:+917709868683"
+            className="text-base-content/70 hover:text-base-content transition"
+          >
+            +91 77098 68683
+          </a>
+        </div>
+      </div>
     </section>
   );
 };

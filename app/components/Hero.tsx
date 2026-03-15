@@ -8,6 +8,7 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import WaveText from "./WaveText";
+import Countdown from "./Countdown";
 
 const images = ["/events/kayak.jpg", "/events/shell.jpg", "/events/punt.jpg"];
 
@@ -73,6 +74,8 @@ const Hero: React.FC = () => {
               Where tradition flows forward. India's oldest college festival
               showcasing the spirit of generations on the Mula River.
             </motion.p>
+
+            <Countdown />
           </div>
 
           <div className="lg:col-span-5 relative flex justify-center">
