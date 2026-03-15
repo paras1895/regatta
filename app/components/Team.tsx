@@ -5,6 +5,19 @@ import { Mail, Instagram } from "lucide-react";
 
 const teamData = [
   {
+    id: "regatta-incharge",
+    title: "REGATTA INCHARGE",
+    people: [
+      {
+        id: "0",
+        name: "S.M. NAVGHARE",
+        image: "team/ri.jpg",
+        email: "",
+        instagram: "",
+      },
+    ],
+  },
+  {
     id: "regatta-secretary",
     title: "REGATTA SECRETARY",
     people: [
