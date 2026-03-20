@@ -27,11 +27,11 @@ const SPONSOR_GROUPS: SponsorGroup[] = [
     type: "dual",
     groups: [
       {
-        title: "Foundation Partner",
+        title: "Associate Sponsor",
         logos: [{ logo: "/sponsors/img3.jpg" }],
       },
       {
-        title: "Banking Partner",
+        title: "Excellence Partner",
         logos: [{ logo: "/sponsors/img4.jpg" }],
       },
     ],
@@ -44,7 +44,7 @@ const SPONSOR_GROUPS: SponsorGroup[] = [
         logos: [{ logo: "/sponsors/img5.jpg" }],
       },
       {
-        title: "Gifting Partner",
+        title: "Sustainability Partner",
         logos: [{ logo: "/sponsors/img6.jpg" }],
       },
     ],
@@ -53,48 +53,24 @@ const SPONSOR_GROUPS: SponsorGroup[] = [
     type: "dual",
     groups: [
       {
-        title: "Development Partner",
+        title: "Strategic Partner",
         logos: [{ logo: "/sponsors/img7.jpg" }],
       },
       {
-        title: "Power Partner",
+        title: "Snacks Partner",
         logos: [{ logo: "/sponsors/img8.jpg" }],
       },
     ],
   },
   {
-    type: "dual",
-    groups: [
-      {
-        title: "Strategic Partner",
-        logos: [{ logo: "/sponsors/img9.jpg" }],
-      },
-      {
-        title: "Digital Excellence Partner",
-        logos: [{ logo: "/sponsors/img10.jpg" }],
-      },
-    ],
-  },
-  {
-    type: "dual",
-    groups: [
-      {
-        title: "Education Partner",
-        logos: [{ logo: "/sponsors/img11.jpg" }],
-      },
-      {
-        title: "Geo Excellence Partner",
-        logos: [{ logo: "/sponsors/img12.jpg" }],
-      },
-    ],
-  },
-  {
-    title: "Snacks Sponsor",
-    logos: [{ logo: "/sponsors/img13.jpg" }],
-  },
-  {
     title: "Media Partners",
     logos: [
+      { logo: "/sponsors/img9.jpg" },
+      { logo: "/sponsors/img10.jpg" },
+      { logo: "/sponsors/img11.jpg" },
+      { logo: "/sponsors/img12.jpg" },
+      { logo: "/sponsors/img13.jpg" },
+      { logo: "/sponsors/img14.jpg" },
       { logo: "/sponsors/img14.jpg" },
       { logo: "/sponsors/img15.jpg" },
       { logo: "/sponsors/img16.jpg" },
@@ -104,8 +80,6 @@ const SPONSOR_GROUPS: SponsorGroup[] = [
       { logo: "/sponsors/img20.jpg" },
       { logo: "/sponsors/img21.jpg" },
       { logo: "/sponsors/img22.jpg" },
-      { logo: "/sponsors/img23.jpg" },
-      { logo: "/sponsors/img24.jpg" },
     ],
   },
 ];
@@ -119,7 +93,7 @@ const Sponsors: React.FC = () => {
             Collaborators & Support
           </p>
           <h2 className="font-serif text-5xl md:text-6xl text-base-content leading-none">
-            97th Regatta Sponsors
+            98th Regatta Sponsors
           </h2>
           <div className="w-32 h-[2px] bg-stone-800 mx-auto"></div>
         </header>
@@ -128,10 +102,7 @@ const Sponsors: React.FC = () => {
           {SPONSOR_GROUPS.map((group, index) => {
             if (group.type === "dual" && group.groups) {
               return (
-                <div
-                  key={index}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-16"
-                >
+                <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-16">
                   {group.groups.map((subGroup, subIndex) => (
                     <div key={subIndex} className="flex flex-col items-center">
                       <div className="flex items-center gap-6 mb-10 w-full">
@@ -142,16 +113,16 @@ const Sponsors: React.FC = () => {
                         <div className="h-[1px] flex-grow bg-stone-600"></div>
                       </div>
 
-                      <div className="flex justify-center gap-10">
+                      <div className="flex justify-center gap-10 flex-wrap">
                         {subGroup.logos.map((sponsor, sIndex) => (
                           <div
                             key={sIndex}
-                            className="w-40 h-24 p-4 flex items-center justify-center bg-white border border-stone-200 shadow-sm hover:shadow-md transition"
+                            className="w-44 h-26 sm:w-52 sm:h-30 md:w-60 md:h-36 p-5 flex items-center justify-center bg-white border border-stone-200 shadow-sm hover:shadow-md hover:scale-105 duration-300 transition rounded-lg"
                           >
                             <img
                               src={sponsor.logo}
                               alt={`${subGroup.title} Logo`}
-                              className="max-h-full max-w-full object-contain"
+                              className="max-h-[70%] max-w-[90%] object-contain"
                             />
                           </div>
                         ))}
@@ -176,12 +147,12 @@ const Sponsors: React.FC = () => {
                   {group.logos?.map((sponsor, sIndex) => (
                     <div
                       key={sIndex}
-                      className="w-32 h-20 md:w-40 md:h-24 p-4 flex items-center justify-center bg-white border border-stone-200 shadow-sm hover:shadow-md transition"
+                      className="w-40 h-24 sm:w-48 sm:h-28 md:w-56 md:h-32 p-5 flex items-center justify-center bg-white border border-stone-200 shadow-sm hover:shadow-md hover:scale-105 duration-300 transition rounded-lg"
                     >
                       <img
                         src={sponsor.logo}
                         alt="Sponsor Logo"
-                        className="max-h-full max-w-full object-contain"
+                        className="max-h-[70%] max-w-[90%] object-contain"
                       />
                     </div>
                   ))}
@@ -191,14 +162,14 @@ const Sponsors: React.FC = () => {
           })}
         </div>
       </div>
+
       <div className="mt-28 pt-16 border-t border-stone-300 text-center">
         <p className="text-md font-bold uppercase tracking-[0.45em] text-stone-500 mb-4">
           Media & Collaborations
         </p>
 
         <p className="text-lg text-base-content mx-auto leading-relaxed mb-4">
-          For more glimpses, media shots, and collaboration opportunities
-          related to Regatta, please contact
+          For more glimpses, media shots, and collaboration opportunities related to Regatta, please contact
         </p>
 
         <div className="inline-flex flex-col items-center gap-1 border border-base-content/20 px-6 py-4 rounded-xl bg-base-100 shadow-sm">
